@@ -1,0 +1,158 @@
+.main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 5vw;
+  overflow: hidden;
+}
+.main .title_top {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+.main .title_bottom {
+  position: absolute;
+  bottom: 15%;
+  right: 5%;
+}
+.main .title_bottom .year {
+  position: absolute;
+  right: 0;
+}
+.main .title_bottom h1 {
+  letter-spacing: -3px;
+}
+.main h2, .main h1, .main p {
+  background-color: unset !important;
+}
+
+.circle {
+  position: relative;
+  opacity: 0.4;
+  filter: blur(5px);
+}
+.circle:nth-child(1) {
+  position: absolute;
+  background-image: linear-gradient(to right, #BCECFF 0%, #C2BBFF 100%);
+  border-radius: 100%;
+  transform: rotateZ(80deg);
+  bottom: 4%;
+  left: 4%;
+}
+.circle:nth-child(2) {
+  position: absolute;
+  background-image: linear-gradient(to right, #FCF5EC 0%, #BDDFF6 100%);
+  border-radius: 100%;
+  transform: rotateZ(60deg);
+  top: -4%;
+  left: 40%;
+}
+.circle:nth-child(3) {
+  position: absolute;
+  background-image: linear-gradient(to right, #D2FEFF 0%, #F6BEE5 100%);
+  border-radius: 100%;
+  transform: rotateZ(160deg);
+  bottom: 20%;
+  right: 8%;
+}
+
+@media (min-width: 1500px) {
+  .title_top h2 {
+    font-size: 7rem;
+    font-weight: 200;
+    color: #3c21b7;
+  }
+  .title_top .position {
+    font-size: 2rem;
+    font-weight: 400;
+    padding-top: 20px;
+  }
+  .title_bottom .year {
+    font-size: 7rem;
+    font-weight: 600;
+    top: -40%;
+  }
+  .title_bottom h1 {
+    font-size: 12rem;
+    font-weight: 200;
+  }
+  .circle {
+    width: 240px;
+    height: 240px;
+  }
+}
+@media (max-width: 1500px) {
+  .title_top h2 {
+    font-size: 7rem;
+    font-weight: 200;
+    color: #3c21b7;
+  }
+  .title_top .position {
+    font-size: 2rem;
+    font-weight: 400;
+    padding-top: 20px;
+  }
+  .title_bottom .year {
+    font-size: 6rem;
+    font-weight: 600;
+    top: -40%;
+  }
+  .title_bottom h1 {
+    font-size: 10rem;
+    font-weight: 200;
+  }
+  .circle {
+    width: 240px;
+    height: 240px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .title_top h2 {
+    font-size: 5.25rem;
+    font-weight: 200;
+    color: #3c21b7;
+  }
+  .title_top .position {
+    font-size: 2rem;
+    font-weight: 400;
+    padding-top: 20px;
+  }
+  .title_bottom .year {
+    font-size: 5rem;
+    font-weight: 600;
+    top: -70%;
+  }
+  .title_bottom h1 {
+    font-size: 7rem;
+    font-weight: 200;
+  }
+  .circle {
+    width: 180px;
+    height: 180px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .title_top h2 {
+    font-size: 3rem;
+    font-weight: 200;
+    color: #3c21b7;
+  }
+  .title_top .position {
+    font-size: 1.25rem;
+    font-weight: 400;
+    padding-top: 20px;
+  }
+  .title_bottom .year {
+    font-size: 4rem;
+    font-weight: 600;
+    top: -70%;
+  }
+  .title_bottom h1 {
+    font-size: 5.25rem;
+    font-weight: 200;
+  }
+  .circle {
+    width: 100px;
+    height: 100px;
+  }
+}

@@ -1,0 +1,281 @@
+.profile {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile .blur {
+  filter: blur(clamp(50px, 5vw, 90px));
+  position: absolute;
+  z-index: 1;
+  border-radius: 900px;
+  background: #EAE7FF;
+}
+.profile .blur:nth-child(1) {
+  height: clamp(300px, 50vw, 50vw);
+  width: calc(clamp(300px, 50vw, 50vw) * 1.1);
+}
+.profile .blur:nth-child(2) {
+  filter: blur(clamp(50px, 5vw, 90px)) hue-rotate(50deg) brightness(1);
+  height: clamp(200px, 40vw, 40vw);
+  width: calc(clamp(200px, 40vw, 40vw) * 0.75);
+  top: 20vh;
+  right: 20vh;
+}
+.profile .blur:nth-child(3) {
+  filter: blur(clamp(50px, 5vw, 90px)) hue-rotate(-50deg);
+  height: clamp(100px, 10vw, 10vw);
+  width: calc(clamp(100px, 10vw, 10vw) * 2);
+  bottom: 20vh;
+  left: 20vw;
+}
+
+.portfolio-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 100;
+}
+
+.portfolio-description h3 {
+  display: inline-block;
+  position: relative;
+  left: -5%;
+  width: 100%;
+  font-size: 2rem;
+  font-weight: 200;
+  line-height: 1;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.portfolio-description .skills li {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+.portfolio-description .skills .skills_name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.portfolio-description .skills .skills_name li {
+  margin-right: 10px;
+  padding: 3px 10px;
+  border: 1px solid #c3c3c3;
+  border-radius: 10px;
+  color: #5e00f8;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.other-links {
+  position: relative;
+  left: 0;
+  top: 50px;
+  z-index: 100;
+  box-sizing: border-box;
+  text-align: center;
+}
+.other-links a {
+  display: inline-block;
+  margin: 0 8px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #5e00f8;
+  font-weight: 600;
+  opacity: 0.7;
+  transition: all 0.2s ease-in;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+  .portfolio-item {
+    padding: 10%;
+  }
+  .portfolio-item:hover .portfolio-thumb {
+    transform: translateX(-1.75rem);
+  }
+  .portfolio-item:hover .portfolio-description {
+    transform: translateX(1.75rem);
+  }
+  .portfolio-thumb {
+    width: 30%;
+    transition: all 0.85s cubic-bezier(0.25, 1, 0.33, 1);
+  }
+  .portfolio-thumb img {
+    width: 100%;
+    transition: all 0.85s cubic-bezier(0.25, 1, 0.33, 1);
+    transform-origin: 90% center;
+    border-radius: 100%;
+  }
+  .portfolio-description {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 60%;
+    transition: all 0.85s cubic-bezier(0.25, 1, 0.33, 1);
+  }
+  .portfolio-description h3 {
+    font-size: 2rem;
+  }
+  .portfolio-description p {
+    margin: 0;
+    padding-top: 60px;
+    font-size: 1.25rem;
+    opacity: 0.8;
+    line-height: 1.5;
+  }
+  .portfolio-description .skills {
+    width: 600px;
+    margin-top: 100px;
+  }
+  .portfolio-description .skills .skills_name li {
+    font-size: 1rem;
+  }
+  .other-links a {
+    font-size: 1.5rem;
+  }
+  .other-links a:hover {
+    transform: translateY(-3px);
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .portfolio-item {
+    padding: 3%;
+  }
+  .portfolio-thumb {
+    width: 25%;
+  }
+  .portfolio-thumb img {
+    width: 100%;
+    transform-origin: 90% center;
+    border-radius: 100%;
+  }
+  .portfolio-description {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 66%;
+  }
+  .portfolio-description h3 {
+    font-size: 1.25rem;
+  }
+  .portfolio-description p {
+    width: 100%;
+    margin: 0;
+    padding-top: 30px;
+    font-size: 0.875rem;
+    opacity: 0.8;
+    line-height: 1.5;
+  }
+  .portfolio-description .skills {
+    position: relative;
+    left: -45%;
+    width: 140%;
+    margin-top: 100px;
+  }
+  .portfolio-description .skills .skills_type {
+    font-size: 0.875rem;
+  }
+  .portfolio-description .skills .skills_name li {
+    font-size: 0.625rem;
+  }
+  .other-links a {
+    font-size: 0.875rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .profile .blur {
+    filter: blur(clamp(50px, 5vw, 90px));
+    position: absolute;
+    z-index: 1;
+    border-radius: 900px;
+    background: #EAE7FF;
+  }
+  .profile .blur:nth-child(1) {
+    height: clamp(300px, 50vw, 50vw);
+    width: calc(clamp(300px, 50vw, 50vw) * 1.1);
+  }
+  .profile .blur:nth-child(2) {
+    filter: blur(clamp(50px, 5vw, 90px)) hue-rotate(50deg) brightness(1);
+    height: clamp(200px, 40vw, 40vw);
+    width: calc(clamp(200px, 40vw, 40vw) * 0.75);
+    top: 20vh;
+    right: 20vh;
+  }
+  .profile .blur:nth-child(3) {
+    filter: blur(clamp(50px, 5vw, 90px)) hue-rotate(-50deg);
+    height: clamp(100px, 10vw, 10vw);
+    width: calc(clamp(100px, 10vw, 10vw) * 2);
+    bottom: 20vh;
+    left: 20vw;
+  }
+  .portfolio-item {
+    flex-direction: column;
+    padding: 5%;
+  }
+  .portfolio-thumb {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .portfolio-thumb img {
+    width: 50%;
+    transform-origin: 90% center;
+    border-radius: 100%;
+  }
+  .portfolio-thumb .other-links {
+    top: 0;
+  }
+  .portfolio-thumb .other-links a {
+    margin: auto 0;
+    width: 100%;
+    height: 50%;
+    display: grid;
+    align-content: space-evenly;
+  }
+  .portfolio-thumb .other-links span {
+    display: none;
+  }
+  .portfolio-description {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .portfolio-description h3 {
+    left: 0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+  .portfolio-description p {
+    margin: 0;
+    padding-top: 30px;
+    font-size: 0.625rem;
+    opacity: 0.8;
+    line-height: 1.5;
+  }
+  .portfolio-description .skills {
+    left: 0;
+    width: 100%;
+    margin-top: 50px;
+  }
+  .portfolio-description .skills .skills_name li {
+    margin-right: 2px;
+    padding: 2px 5px;
+    font-size: 0.625rem;
+  }
+}

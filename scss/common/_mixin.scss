@@ -1,0 +1,61 @@
+@import "../common/var";
+
+// Breack Point
+@mixin res-desktop{
+    @media screen and (min-width: #{$desktop}) {
+        @content;
+    }
+}
+@mixin res-tablet{
+    @media screen and (max-width: #{$tablet}) {
+        @content;
+    }
+}
+@mixin res-mobile {
+    @media screen and (max-width: #{$mobile}) {
+        @content;
+    }
+}
+
+// Section Size
+@mixin section-size{
+    position: relative; 
+    width: 100%; height: 100vh; padding: 5vw;
+}
+
+//circle & blur
+@mixin circle{
+    position: relative;
+    opacity: 0.4; filter: blur(5px);
+}
+@mixin circle-position($cp-color01, $cp-color02, $cp-rotate){
+    position: absolute; 
+    background-image: linear-gradient(to right, $cp-color01 0%, $cp-color02 100%);
+    border-radius: 100%;
+    transform: rotateZ($cp-rotate);
+}
+
+//text
+@mixin home-title-text($fs, $fw){
+    font-size: $fs;
+    font-weight: $fw;
+}
+
+//contact - form
+@mixin contact-form($lh){
+    width: 100%;
+    border: none; border-bottom: 1px solid $contact-text-color;
+    outline: none; background-color: $no-color; line-height: $lh;
+    cursor: text;
+}
+
+//background
+@mixin project-site-bg($name) {
+    background: url("../img/#{$name}.png") no-repeat center / cover;
+}
+@mixin project-viewport-bg($name) {
+    background-image: url("../img/#{$name}.png");
+}
+@mixin project-gall-bg($name) {
+    background: url("../img/#{$name}.png") no-repeat top center / contain;
+}

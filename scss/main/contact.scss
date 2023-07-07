@@ -1,0 +1,129 @@
+@import "../common/var";
+@import "../common/mixin";
+
+.contact {
+    @include section-size;
+    text-align: center;
+    
+    .blur {
+        filter: blur(80px);
+        position: absolute; z-index: 1;
+        border-radius: 900px;
+        
+        &:nth-child(1){ left: 0; bottom: 5%; width: 480px; height: 480px; background-color: #E7F5FF; }
+        &:nth-child(2){ left: 10%; top: -10%; background-color: #FFF2F2; }
+        &:nth-child(3){ bottom: 0; width: 480px; height: 480px; background-color: #FFFFE7; }
+        &:nth-child(4){ right: 10%; top: 0; width: 480px; height: 480px; background-color: #EEFFE7; }
+        &:nth-child(5){ right: 0; background-color: #EDEAFF; }
+    }
+}
+
+.contact_info{
+    display: flex; justify-content: center; align-items: center;
+    position: relative; top: 50%; left: 50%; z-index: 10;
+    width: 90%;
+    transform: translate(-50%, -50%);
+    
+    .contact_contact_wrap h4{
+        margin-bottom: 80px;
+        font-weight: 300; text-align: left; color: $sub-color-2;
+    }
+    .contact_contact_wrap p{ text-align: left; line-height: 1.5; font-weight: 400; }
+}
+.gform{
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(2,1fr);
+    grid-column-gap: 30px;
+    -webkit-column-gap: 30px;
+    column-gap: 30px;
+    background-color: $no-color;
+    text-align: left;
+    .contact_name, .contact_mail{
+        @include contact-form(1.5);
+        cursor: text;
+    }
+    .contact_message{
+        @include contact-form(2);
+        grid-column: 1/3;
+        cursor: text;
+    }
+    .contact_btn{
+        width: 60px; padding: 5px;
+        border-radius: 20px; border: 1px solid $button-color;
+        color: $sub-color-2; text-align: center;
+        background-color: $blur-bg-color;
+        transition: all .6s ease-in-out;
+        cursor: none;
+    }
+}
+.contact_thanks{
+    display: none;
+    margin-left: 20%;
+    font-size: $text-6; font-weight: 300;
+}
+input::placeholder{ color: $contact-text-color }
+
+@include res-desktop {
+    .contact .blur:nth-child(2){ width: 760px; height: 760px; }
+    .contact .blur:nth-child(3){ left: 30%; }
+    .contact .blur:nth-child(5){ bottom: 0; width: 700px; height: 700px; }
+    
+    .contact_contact_wrap h4{ font-size: $text-9; }
+    .contact_contact_wrap p{ font-size: $text-3; }
+    
+    .gform{
+        grid-row-gap: 60px; row-gap: 60px;
+        width: 500px; margin-left: 200px;
+        
+        .contact_name, .contact_mail, .contact_message{ font-size: $text-4; }
+        .contact_btn{
+            width: 100px; padding: 10px 20px;
+            font-size: $text-4; transform: translate(300px, 20px);
+            &:hover{
+                background-color: $button-color;
+            }
+        }
+    }
+    #cursor.writing .cursor_circle{ display: none; }
+}
+
+@include res-tablet {
+    .contact .blur:nth-child(2){ width: 560px; height: 560px; }
+    .contact .blur:nth-child(3){ right: 0; z-index: 2;}
+    .contact .blur:nth-child(5){ bottom: 10%; width: 550px; height: 550px; }
+    
+    .contact_contact_wrap h4{ font-size: $text-8; }
+    .contact_contact_wrap p{ font-size: $text-1; }
+    .gform{
+        grid-row-gap: 20px; row-gap: 20px;
+        width: 300px; margin: 0 0 20px 40px;
+        .contact_name, .contact_mail, .contact_message{ font-size: $text-2; }
+        .contact_btn{
+            width: 60px; padding: 5px;
+            font-size: $text-2; transform: translate(140px, 10px);
+        }
+    }
+}
+
+@include res-mobile {
+    .contact .blur:nth-child(1), .contact .blur:nth-child(2), .contact .blur:nth-child(4){ width: 200px; height: 200px; }
+    .contact .blur:nth-child(3){ width: 200px; height: 200px; left: 30%; }
+    .contact .blur:nth-child(5){ width: 200px; height: 200px; bottom: 0; }
+    
+    .contact_info{
+        flex-direction: column;
+        .contact_contact_wrap h4{ font-size: $text-9; margin-bottom: 20px; text-align: center; }
+        .contact_contact_wrap p{ font-size: $text-3; text-align: center; }
+    }
+    
+    .gform{
+        display: block;
+        width: 300px; margin: 50px 0 20px; 
+        .contact_name, .contact_mail, .contact_message{ font-size: $text-5; margin-bottom: 30px;}
+        .contact_btn{
+            width: 60px; padding: 5px;
+            font-size: $text-2; transform: translate(0);
+        }
+    }
+}

@@ -1,0 +1,187 @@
+@import "../common/var";
+@import "../common/base";
+@import "../common/mixin";
+
+@media (min-width:1024px){
+    *{ font-size: $text-3; }
+
+    .container_only_for_centering {
+        display: grid; place-items: center;
+        position: absolute; top: 3vh; right: 6vw;
+    
+        .darkmode_toggle_wrapper {
+            position: relative;
+            background:  $blur-bg-color;
+            width: calc($darkmode-toggle-size * 2);
+            height: $darkmode-toggle-size;
+            border-radius: calc($darkmode-toggle-size / 2);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border: 1px solid $contact-text-color;
+    
+            #darkmode_toggle {
+                opacity: 0;
+                height: $darkmode-toggle-size;
+                width: calc($darkmode-toggle-size * 2);
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                cursor: pointer;
+            }
+            .darkmode_toggle_circle {
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: calc($darkmode-toggle-size);
+                height: $darkmode-toggle-size;
+                width: calc($darkmode-toggle-size);
+                border-radius: 50%;
+                background: $background-color-light;
+                border: 2px solid $sub-color-2;
+                box-sizing: border-box;
+                box-shadow: 0 0 calc($darkmode-toggle-size / 10) $sub-color-2;
+                transition: 0.1s ease-in;
+            }
+            #darkmode_toggle:checked + .darkmode_toggle_circle {
+                right: calc($darkmode-toggle-size);
+                left: 0;
+            }
+            .darkmode_toggle {
+                font-size: calc($darkmode-toggle-size * 0.6);
+                line-height: 0;
+            }
+        }
+    }
+
+    /* gnb */
+    #gnb{
+        position: fixed; top: 8vh; right: 1vw; z-index: 9000;
+        cursor: pointer;
+        li{
+            .nav {
+                width: 2vw; height: 3vh; margin: 20px 10px; 
+                &:hover{transition: 0.6s; cursor: pointer;}
+            }
+            &:nth-child(1) .nav{ background: url(../img/home.png) no-repeat center / contain; }
+            &:nth-child(2) .nav{ background: url(../img/profile.png) no-repeat center / contain;}
+            &:nth-child(3) .nav{ background: url(../img/project.png) no-repeat center / contain; }
+            &:nth-child(4) .nav{ background: url(../img/contact.png) no-repeat center / contain; }
+            
+            .tooltip {
+                display: inline-block;
+                position: absolute; right: 60px;
+                padding: 8px 15px; 
+                opacity: 0; visibility: hidden;
+                background-color: $button-color; border-radius: 3px;
+                font-size: $text-2; 
+                transform: translateY(-45px); transition: 0.6s;
+                cursor: pointer;
+
+                &::before {
+                    content: '';
+                    display: block;
+                    position: absolute; top: 10px; right: -4px;
+                    width: 10px; height: 10px;
+                    background-color: inherit;
+                    transform: rotate(45deg);
+                }
+            }
+            &:hover .tooltip{ opacity: 1; visibility: visible; }
+        }
+        ::after{ position: absolute; }
+    }
+
+    .pannel_btn, .pannel{display: none;}
+    #cursor.menu .cursor_circle{ display: none; }
+    
+}
+
+@media (max-width:1023px) {
+    *{ font-size: $text-2; }
+    #gnb{display: none;}
+    .container_only_for_centering{display: none;}
+
+    .pannel_btn {
+        position: fixed; top: 10%; right: 14%; z-index: 9998;
+        width: 40px; height: 32px; padding: 5px;
+        a {
+        position: relative;
+        display: block; width: 100%; height: 100%;
+        transition: 0.3s; 
+        }
+    }
+
+    .pannel {
+        position: fixed; top: 0; left: 0; z-index: 9998;
+        width: 100vw; height: 100vh; background-color: $background-color-light; color: $main-color-light;
+        display: none; 
+        #gnb_mobile{
+            position: absolute; top: 50%; left: 50%;
+            width: 50vw; height: 400px; 
+            transform: translate(-50%, -50%);
+            li{
+                margin-bottom: 50px;
+                font-size: $text-9; text-align: center; 
+            }
+        }
+        .container-only-for-centering_mobile {
+            display: grid; place-items: center;
+            position: absolute; bottom: 10vh; right: 50%;
+            transform: translateX(50%);
+            .darkmode-toggle-wrapper {
+                position: relative;
+                background:  $blur-bg-color;
+                width: calc($darkmode-toggle-size * 6);
+                height: calc($darkmode-toggle-size * 3);
+                border-radius: calc($darkmode-toggle-size / 2 * 3);
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                border: 1px solid $contact-text-color;
+        
+                #darkmode-toggle {
+                    opacity: 0;
+                    height: 100%;
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 1;
+                    cursor: pointer;
+                }
+                .darkmode-toggle-circle {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: calc($darkmode-toggle-size);
+                    height: calc($darkmode-toggle-size * 3);
+                    width: calc($darkmode-toggle-size * 3);
+                    border-radius: 50%;
+                    background: $background-color-light;
+                    border: 2px solid $sub-color-2;
+                    box-sizing: border-box;
+                    box-shadow: 0 0 calc($darkmode-toggle-size / 10) $sub-color-2;
+                    transition: 0.1s ease-in;
+                }
+                #darkmode-toggle:checked + .darkmode-toggle-circle {
+                    left: calc($darkmode-toggle-size * 3);
+                    right: 0;
+                }
+                .darkmode-toggle {
+                    font-size: calc($darkmode-toggle-size * 2.4);
+                    line-height: 0;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:767px) {
+    *{ font-size: $text-1; }
+    .pannel_btn {
+        top: 8%; right: 10%;
+        img { width: 120%; height: 150%; }
+    }
+}

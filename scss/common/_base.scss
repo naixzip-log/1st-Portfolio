@@ -1,0 +1,59 @@
+@import "../common/var";
+@import "../common/mixin";
+
+*{
+    padding: 0; margin: 0; 
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif; 
+    font-size: $text-3; color: $main-color-light;
+    cursor: none;
+}
+
+a{ text-decoration: none; }
+ul, ol, li{ list-style: none; }
+img{ border: none; display: block; }
+button{ cursor: pointer; }
+
+body{
+    margin: 5%;
+    border: 1px solid $contact-text-color;
+    background-color: $background-color-light;
+}
+
+/* cursor */
+#cursor {
+    position: fixed; left: 0; top: 0; z-index: 9999;
+    pointer-events: none;
+    will-change: transform;
+    mix-blend-mode: difference;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .cursor_circle {
+        width: 30px; height: 30px;
+        margin: -50% 0 0 -50%;
+        border-radius: 50%;
+        background-color: #d1cafc;
+        /* border: 1px solid #d1cafc; */
+        transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+            background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+            border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+            width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+            height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    #cursor.arrow .cursor_circle{
+        width: 100px; height: 100px;
+        background-color: rgba(148, 135, 58, 0.5);
+        border: none;
+    }
+    #cursor.more .cursor_circle{
+        width: 30px; height: 30px;
+        background-color: $main-color-light;
+        border-radius: 30%; border: none; 
+    }
+    #cursor.arrow2 .cursor_circle{
+        width: 50px; height: 50px;
+        background-color: #FFDF96;
+    }
+}
+

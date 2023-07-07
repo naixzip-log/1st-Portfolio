@@ -1,0 +1,56 @@
+@import "../common/var";
+@import "../common/mixin";
+
+
+.main{
+    @include section-size; 
+    overflow: hidden;
+    
+    .title_top{ position: absolute; top: 5%; left: 5%; }
+    .title_bottom{ 
+        position: absolute; bottom: 15%; right: 5%;
+    
+        .year{ position: absolute; right: 0; }
+        h1{ letter-spacing: -3px; }
+    }
+    h2, h1, p{ background-color: $no-color !important; }
+}
+.circle{ 
+    @include circle() ;
+    &:nth-child(1){ @include circle-position(#BCECFF, #C2BBFF, 80deg); bottom: 4%; left: 4%;}
+    &:nth-child(2){ @include circle-position(#FCF5EC, #BDDFF6, 60deg); top: -4%; left: 40%;}
+    &:nth-child(3){ @include circle-position(#D2FEFF, #F6BEE5, 160deg); bottom: 20%; right: 8%;}
+}
+
+
+
+
+@media (min-width:1500px){
+    .title_top h2{ @include home-title-text(7rem, 200); color: $sub-color-1; }
+    .title_top .position{ @include home-title-text(2rem, 400);padding-top: 20px; }
+    .title_bottom .year{ @include home-title-text(7rem, 600); top: -40%; }
+    .title_bottom h1{ @include home-title-text(12rem, 200); }
+    .circle{ width: 240px; height: 240px; }
+}
+@media (max-width:1500px){
+    .title_top h2{ @include home-title-text(7rem, 200); color: $sub-color-1; }
+    .title_top .position{ @include home-title-text(2rem, 400); padding-top: 20px; }
+    .title_bottom .year{ @include home-title-text(6rem, 600); top: -40%; }
+    .title_bottom h1{ @include home-title-text(10rem, 200); }
+    .circle{ width: 240px; height: 240px; }
+}
+@include res-tablet {
+    .title_top h2{ @include home-title-text(5.25rem, 200); color: $sub-color-1; }
+    .title_top .position{ @include home-title-text(2rem, 400); padding-top: 20px; }
+    .title_bottom .year{ @include home-title-text(5rem, 600); top: -70%; }
+    .title_bottom h1{ @include home-title-text(7rem, 200); }
+    .circle{ width: 180px; height: 180px; }
+}
+@include res-mobile {
+    .title_top h2{ @include home-title-text(3rem, 200); color: $sub-color-1; }
+    .title_top .position{ @include home-title-text(1.25rem, 400); padding-top: 20px; }
+    .title_bottom .year{ @include home-title-text(4rem, 600); top: -70%;}
+    .title_bottom h1{ @include home-title-text(5.25rem, 200); }
+    .circle{ width: 100px; height: 100px; }
+
+}

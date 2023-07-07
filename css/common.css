@@ -1,0 +1,386 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: #333;
+  cursor: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+img {
+  border: none;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  margin: 5%;
+  border: 1px solid #c3c3c3;
+  background-color: #fff;
+}
+
+/* cursor */
+#cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  pointer-events: none;
+  will-change: transform;
+  mix-blend-mode: difference;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cursor_circle {
+    width: 30px;
+    height: 30px;
+    margin: -50% 0 0 -50%;
+    border-radius: 50%;
+    background-color: #d1cafc;
+    /* border: 1px solid #d1cafc; */
+    transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1), width 0.3s cubic-bezier(0.25, 1, 0.5, 1), height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  #cursor.arrow .cursor_circle {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(148, 135, 58, 0.5);
+    border: none;
+  }
+  #cursor.more .cursor_circle {
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    border-radius: 30%;
+    border: none;
+  }
+  #cursor.arrow2 .cursor_circle {
+    width: 50px;
+    height: 50px;
+    background-color: #FFDF96;
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: #333;
+  cursor: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+img {
+  border: none;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  margin: 5%;
+  border: 1px solid #c3c3c3;
+  background-color: #fff;
+}
+
+/* cursor */
+#cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  pointer-events: none;
+  will-change: transform;
+  mix-blend-mode: difference;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cursor_circle {
+    width: 30px;
+    height: 30px;
+    margin: -50% 0 0 -50%;
+    border-radius: 50%;
+    background-color: #d1cafc;
+    /* border: 1px solid #d1cafc; */
+    transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1), width 0.3s cubic-bezier(0.25, 1, 0.5, 1), height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  #cursor.arrow .cursor_circle {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(148, 135, 58, 0.5);
+    border: none;
+  }
+  #cursor.more .cursor_circle {
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    border-radius: 30%;
+    border: none;
+  }
+  #cursor.arrow2 .cursor_circle {
+    width: 50px;
+    height: 50px;
+    background-color: #FFDF96;
+  }
+}
+@media (min-width: 1024px) {
+  * {
+    font-size: 1rem;
+  }
+  .container_only_for_centering {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: 3vh;
+    right: 6vw;
+  }
+  .container_only_for_centering .darkmode_toggle_wrapper {
+    position: relative;
+    background: #EAE7FF;
+    width: 4vw;
+    height: 2vw;
+    border-radius: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid #c3c3c3;
+  }
+  .container_only_for_centering .darkmode_toggle_wrapper #darkmode_toggle {
+    opacity: 0;
+    height: 2vw;
+    width: 4vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    cursor: pointer;
+  }
+  .container_only_for_centering .darkmode_toggle_wrapper .darkmode_toggle_circle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 2vw;
+    height: 2vw;
+    width: 2vw;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid #5e00f8;
+    box-sizing: border-box;
+    box-shadow: 0 0 0.2vw #5e00f8;
+    transition: 0.1s ease-in;
+  }
+  .container_only_for_centering .darkmode_toggle_wrapper #darkmode_toggle:checked + .darkmode_toggle_circle {
+    right: 2vw;
+    left: 0;
+  }
+  .container_only_for_centering .darkmode_toggle_wrapper .darkmode_toggle {
+    font-size: 1.2vw;
+    line-height: 0;
+  }
+  /* gnb */
+  #gnb {
+    position: fixed;
+    top: 8vh;
+    right: 1vw;
+    z-index: 9000;
+    cursor: pointer;
+  }
+  #gnb li .nav {
+    width: 2vw;
+    height: 3vh;
+    margin: 20px 10px;
+  }
+  #gnb li .nav:hover {
+    transition: 0.6s;
+    cursor: pointer;
+  }
+  #gnb li:nth-child(1) .nav {
+    background: url(../img/home.png) no-repeat center/contain;
+  }
+  #gnb li:nth-child(2) .nav {
+    background: url(../img/profile.png) no-repeat center/contain;
+  }
+  #gnb li:nth-child(3) .nav {
+    background: url(../img/project.png) no-repeat center/contain;
+  }
+  #gnb li:nth-child(4) .nav {
+    background: url(../img/contact.png) no-repeat center/contain;
+  }
+  #gnb li .tooltip {
+    display: inline-block;
+    position: absolute;
+    right: 60px;
+    padding: 8px 15px;
+    opacity: 0;
+    visibility: hidden;
+    background-color: #C2BBFF;
+    border-radius: 3px;
+    font-size: 0.875rem;
+    transform: translateY(-45px);
+    transition: 0.6s;
+    cursor: pointer;
+  }
+  #gnb li .tooltip::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: -4px;
+    width: 10px;
+    height: 10px;
+    background-color: inherit;
+    transform: rotate(45deg);
+  }
+  #gnb li:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+  }
+  #gnb ::after {
+    position: absolute;
+  }
+  .pannel_btn, .pannel {
+    display: none;
+  }
+  #cursor.menu .cursor_circle {
+    display: none;
+  }
+}
+@media (max-width: 1023px) {
+  * {
+    font-size: 0.875rem;
+  }
+  #gnb {
+    display: none;
+  }
+  .container_only_for_centering {
+    display: none;
+  }
+  .pannel_btn {
+    position: fixed;
+    top: 10%;
+    right: 14%;
+    z-index: 9998;
+    width: 40px;
+    height: 32px;
+    padding: 5px;
+  }
+  .pannel_btn a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+  }
+  .pannel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9998;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    color: #333;
+    display: none;
+  }
+  .pannel #gnb_mobile {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50vw;
+    height: 400px;
+    transform: translate(-50%, -50%);
+  }
+  .pannel #gnb_mobile li {
+    margin-bottom: 50px;
+    font-size: 3rem;
+    text-align: center;
+  }
+  .pannel .container-only-for-centering_mobile {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    bottom: 10vh;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  .pannel .container-only-for-centering_mobile .darkmode-toggle-wrapper {
+    position: relative;
+    background: #EAE7FF;
+    width: 12vw;
+    height: 6vw;
+    border-radius: 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid #c3c3c3;
+  }
+  .pannel .container-only-for-centering_mobile .darkmode-toggle-wrapper #darkmode-toggle {
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    cursor: pointer;
+  }
+  .pannel .container-only-for-centering_mobile .darkmode-toggle-wrapper .darkmode-toggle-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 2vw;
+    height: 6vw;
+    width: 6vw;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid #5e00f8;
+    box-sizing: border-box;
+    box-shadow: 0 0 0.2vw #5e00f8;
+    transition: 0.1s ease-in;
+  }
+  .pannel .container-only-for-centering_mobile .darkmode-toggle-wrapper #darkmode-toggle:checked + .darkmode-toggle-circle {
+    left: 6vw;
+    right: 0;
+  }
+  .pannel .container-only-for-centering_mobile .darkmode-toggle-wrapper .darkmode-toggle {
+    font-size: 4.8vw;
+    line-height: 0;
+  }
+}
+@media (max-width: 767px) {
+  * {
+    font-size: 0.625rem;
+  }
+  .pannel_btn {
+    top: 8%;
+    right: 10%;
+  }
+  .pannel_btn img {
+    width: 120%;
+    height: 150%;
+  }
+}
